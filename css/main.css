@@ -1,0 +1,407 @@
+/*CSS styling*/
+
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: floralwhite;
+  height: 4000px;
+}
+h2{
+  text-align: center;
+  color: darksalmon;
+  font-size: 300%;
+}
+ul li {
+	list-style: none;
+}
+
+/*============
+   Header
+===========*/
+
+.header {
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	background: rgba(105, 105, 105, 0.08);
+	/* border-bottom: 2px solid #a7a7a7; */
+}
+.header .header-content {
+  -weight:700;
+	color: #000;
+	text-transform:uppercase;
+	letter-spacing: 2px;
+}
+.header .logo {
+  float: left;
+	font-size:20px;
+	text-align: center;
+	padding: 15px;
+	vertical-align: bottom;
+}
+.header .logo a{
+	padding-top: 10%;
+	display: inherit;
+	color: darkmagenta;
+	border-top: 0;
+}
+.header.fixed .header-content .logo a{
+	padding-top: 22%;
+	color: darkmagenta;
+	text-align: center;
+}
+.header.fixed {
+	background-color: #0d0d0d;
+}
+.header.fixed a {
+	color: #8d8d8d;
+}
+.header.fixed .header-content {
+	border-bottom: 0;
+	padding: 30px 0;
+}
+.header.fixed .nav-toggle {
+	top: 5px;
+	color: #000;
+}
+.navigation {
+	float: right;
+}
+.navigation li {
+	display: inline-block;
+}
+.navigation a {
+	color: navajowhite;
+	font-size: 14px;
+	font-weight: 400;
+	margin-left: 28px;
+}
+.navigation a:hover, .navigation a.active {
+	color: darkmagenta !important;
+}
+.nav-toggle {
+	display: none;
+	height: 44px;
+	overflow: hidden;
+	position: fixed;
+	right: 5%;
+	text-indent: 100%;
+	top: 18px;
+	white-space: nowrap;
+	width: 44px;
+	z-index: 99999;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	background: rgba(174, 174, 174, 0.44);
+}
+.nav-toggle:before, .nav-toggle:after {
+	border-radius: 50%;
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-transition-property: -moz-transform;
+	-o-transition-property: -o-transform;
+	-webkit-transition-property: -webkit-transform;
+	transition-property: transform;
+}
+.nav-toggle:before {
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	color: darkmagenta;
+}
+.nav-toggle:after {
+	background-color: transparent;
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	-moz-transition-duration: 0s;
+	-o-transition-duration: 0s;
+	-webkit-transition-duration: 0s;
+	transition-duration: 0s;
+	color:darkmagenta;
+}
+.nav-toggle span {
+	bottom: auto;
+	display: inline-block;
+	height: 3px;
+	left: 50%;
+	position: absolute;
+	right: auto;
+	top: 50%;
+	width: 18px;
+	z-index: 10;
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	color: darksalmon;
+}
+.nav-toggle span:before, .nav-toggle span:after {
+	background-color: #000;
+	content: "";
+	height: 100%;
+	position: absolute;
+  right: 0;
+	top: 0;
+	width: 100%;
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-transition: -moz-transform 0.3s;
+	-o-transition: -o-transform 0.3s;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+.nav-toggle span:before {
+	-moz-transform: translateY(-6px) rotate(0deg);
+	-ms-transform: translateY(-6px) rotate(0deg);
+	-webkit-transform: translateY(-6px) rotate(0deg);
+	transform: translateY(-6px) rotate(0deg);
+}
+.nav-toggle span:after {
+	-moz-transform: translateY(6px) rotate(0deg);
+	-ms-transform: translateY(6px) rotate(0deg);
+	-webkit-transform: translateY(6px) rotate(0deg);
+	transform: translateY(6px) rotate(0deg);
+}
+.nav-toggle.close-nav:before {
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+.nav-toggle.close-nav:after {
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.nav-toggle.close-nav span {
+	background-color: rgba(255, 255, 255, 0);
+}
+.nav-toggle.close-nav span:before, .nav-toggle.close-nav span:after {
+	background-color: #fff;
+}
+.nav-toggle.close-nav span:before {
+	-moz-transform: translateY(0) rotate(45deg);
+	-ms-transform: translateY(0) rotate(45deg);
+	-webkit-transform: translateY(0) rotate(45deg);
+	transform: translateY(0) rotate(45deg);
+}
+.nav-toggle.close-nav span:after {
+	-moz-transform: translateY(0) rotate(-45deg);
+	-ms-transform: translateY(0) rotate(-45deg);
+  -webkit-transform: translateY(0) rotate(-45deg);
+	transform: translateY(0) rotate(-45deg);
+}
+
+/*============
+	Banner
+==============*/
+
+.banner {
+	background-image: url(../img/workspace1.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;
+	min-height: 650px;
+}
+.banner-text {
+	padding-top: 28%;
+	/* display: none; */
+	text-align: center;
+}
+.banner-text h5{
+  font-size: 200%;
+  color: navajowhite;
+  text-align: center;
+}
+.banner-text h1 {
+	color: navajowhite;
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 40px;
+  font-weight: 700;
+	text-transform: uppercase;
+  text-align: center;
+}
+.banner-text h1 span{
+	color: darksalmon;
+}
+.banner-text p {
+	color:darksalmon;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 32px;
+	margin-top: 16px;
+	margin-bottom: 80px;
+  text-align: center;
+}
+     
+  /*--------
+    About-us
+  ---------*/
+
+  .about-us{
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 2%;
+  }
+.about-us img{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.about-us p{
+  color: darkslategray;
+}
+.about-us a{
+  background-color: darksalmon;
+  color: #ffffff;
+  margin: 5%;
+  padding: 3%;
+  font-size: 16px;
+}
+
+/*==========
+Services
+==========*/
+
+.services{
+  padding-bottom: 1%;
+  background-color: #ffffff;
+  margin: 5%;
+  padding-top: 8px;
+}
+
+.services h3{
+  color: darkorchid;
+  font-family: Geneva;
+  font-size: 200%;
+}
+.services .box span{
+  color: darksalmon;
+  font-size: 40px;
+}
+.services .fa{
+  padding-bottom: 10%;
+  color: #ffffff;
+  font-size: 28px;
+  padding-top: 30px;
+  float: left;
+  border-radius: 40%;
+  height: 80px;
+  width: 80px;
+  font-weight: 600;
+  margin-bottom: 46px;
+  display: inline-table;
+  margin-right: -11px;
+}
+.services p{
+	padding-bottom: 5px;
+}
+.services h5{
+  color: darksalmon;
+  text-align: left;
+  margin-left: 18%;
+  margin-bottom: 2%;
+}
+.services table{
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+.services table th{
+  color: darkmagenta;
+}
+
+/*=========
+Appointment
+==========*/
+
+.appointment{
+  padding:  90px 130px 130px 90px;
+}
+.appointment form {
+  background-color: #ffffff;
+  margin: 50%;
+  padding-left: 50px;
+}
+
+/*===========
+Testimonial
+=========*/
+
+.testimonials{
+	position: relative;
+	text-align: center;
+}
+.testimonials blockquote {
+	border: 0;
+	margin: 0;
+	padding: 30px 15%;
+}
+.testimonials h1 {
+	color: darkmagenta;
+	font-weight: 300;
+	font-size: 17px;
+	line-height: 26px;
+}
+.testimonials p {
+	color: darkorchid;
+  display: block;
+	font-size: 18px;
+	font-style: normal;
+	letter-spacing: 3px;
+	font-weight: 500;
+	margin-top: 25px;
+}
+.flex-control-nav {
+	margin-top: 2%;
+	bottom: none!important;
+	position: relative!important;
+	right: 0;
+	text-align: center;
+	width: 100%!important;
+	z-index: 100;
+}
+
+  /*---------
+  contacts
+  ----------*/
+
+  .contacts {
+    padding-top: 20px;
+    background-color: darksalmon;
+  }
+ 
+  /*========
+  Footer
+  =========*/
+
+  .footer{
+    background-color: darksalmon;
+  }
